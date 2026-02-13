@@ -1,0 +1,187 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "start": "Start",
+    "stop": "Stop",
+    "reset": "Reset",
+    "clear": "Clear",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "learnMore": "Learn More",
+    "tryIt": "Try It",
+    "viewDetails": "View Details"
+  },
+  "nav": {
+    "home": "Home",
+    "demos": "Demos",
+    "about": "About",
+    "shortcuts": "Keyboard Shortcuts",
+    "settings": "Settings",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "language": "Language"
+  },
+  "home": {
+    "title": "Bitcoin Tech Lab",
+    "subtitle": "Interactive exploration of Bitcoin's cryptographic foundations",
+    "getStarted": "Get Started",
+    "exploreTimeline": "Explore Timeline",
+    "whatYouWillLearn": "What You Will Learn",
+    "interactiveDemos": "Interactive Demos",
+    "selectDemo": "Select a demo to explore"
+  },
+  "demos": {
+    "categories": {
+      "fundamentals": "Fundamentals",
+      "cryptography": "Cryptography",
+      "bitcoin": "Bitcoin",
+      "advanced": "Advanced"
+    },
+    "difficulty": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    },
+    "hashFunctions": {
+      "title": "Hash Functions",
+      "description": "Explore SHA-256 and how Bitcoin uses cryptographic hash functions"
+    },
+    "ellipticCurves": {
+      "title": "Elliptic Curves",
+      "description": "Visualize the secp256k1 curve used in Bitcoin cryptography"
+    },
+    "digitalSignatures": {
+      "title": "Digital Signatures",
+      "description": "Learn how ECDSA signatures work to secure Bitcoin transactions"
+    },
+    "merkleTree": {
+      "title": "Merkle Trees",
+      "description": "Understand how Bitcoin efficiently verifies transaction data"
+    },
+    "mining": {
+      "title": "Mining",
+      "description": "Simulate the proof-of-work mining process"
+    },
+    "wallets": {
+      "title": "Wallets",
+      "description": "Learn how Bitcoin wallets generate and manage keys"
+    },
+    "transactions": {
+      "title": "Transactions",
+      "description": "Understand how Bitcoin transactions are structured"
+    },
+    "blockchain": {
+      "title": "Blockchain",
+      "description": "Explore how blocks are linked together"
+    }
+  },
+  "ecc": {
+    "title": "Elliptic Curve Cryptography",
+    "curveEquation": "Curve Equation",
+    "pointAddition": "Point Addition",
+    "scalarMultiplication": "Scalar Multiplication",
+    "privateKey": "Private Key",
+    "publicKey": "Public Key",
+    "generator": "Generator Point",
+    "order": "Order",
+    "infinity": "Infinity",
+    "onCurve": "On Curve",
+    "notOnCurve": "Not On Curve"
+  },
+  "hash": {
+    "title": "Hash Functions",
+    "input": "Input",
+    "output": "Output (Hash)",
+    "inputPlaceholder": "Enter text to hash...",
+    "sha256": "SHA-256",
+    "doubleSha256": "Double SHA-256",
+    "ripemd160": "RIPEMD-160",
+    "avalancheEffect": "Avalanche Effect",
+    "hashProperties": "Hash Properties"
+  },
+  "mining": {
+    "title": "Bitcoin Mining",
+    "nonce": "Nonce",
+    "difficulty": "Difficulty",
+    "target": "Target",
+    "hashRate": "Hash Rate",
+    "blockFound": "Block Found!",
+    "searching": "Searching...",
+    "startMining": "Start Mining",
+    "stopMining": "Stop Mining",
+    "hashesPerSecond": "hashes/second"
+  },
+  "signatures": {
+    "title": "Digital Signatures",
+    "sign": "Sign",
+    "verify": "Verify",
+    "message": "Message",
+    "signature": "Signature",
+    "valid": "Valid Signature",
+    "invalid": "Invalid Signature",
+    "privateKeyRequired": "Private key required to sign"
+  },
+  "merkle": {
+    "title": "Merkle Trees",
+    "root": "Merkle Root",
+    "leaf": "Leaf",
+    "branch": "Branch",
+    "proof": "Merkle Proof",
+    "addTransaction": "Add Transaction",
+    "verifyTransaction": "Verify Transaction"
+  },
+  "wallet": {
+    "title": "Bitcoin Wallets",
+    "generateNew": "Generate New Wallet",
+    "importKey": "Import Private Key",
+    "exportKey": "Export Private Key",
+    "address": "Address",
+    "balance": "Balance",
+    "privateKey": "Private Key",
+    "publicKey": "Public Key",
+    "mnemonic": "Mnemonic Phrase",
+    "derivationPath": "Derivation Path"
+  },
+  "blockchain": {
+    "title": "Blockchain",
+    "block": "Block",
+    "blockHeight": "Block Height",
+    "previousHash": "Previous Hash",
+    "timestamp": "Timestamp",
+    "transactions": "Transactions",
+    "addBlock": "Add Block",
+    "validateChain": "Validate Chain",
+    "chainValid": "Chain is valid",
+    "chainInvalid": "Chain is invalid"
+  },
+  "shortcuts": {
+    "title": "Keyboard Shortcuts",
+    "navigation": "Navigation",
+    "actions": "Actions",
+    "goHome": "Go to Home",
+    "toggleTheme": "Toggle Theme",
+    "showShortcuts": "Show Shortcuts",
+    "escape": "Close / Cancel"
+  },
+  "footer": {
+    "builtWith": "Built with",
+    "forEducation": "for educational purposes",
+    "openSource": "Open Source",
+    "documentation": "Documentation",
+    "github": "GitHub"
+  },
+  "errors": {
+    "notFound": "Page not found",
+    "generic": "Something went wrong",
+    "tryAgain": "Try Again",
+    "goHome": "Go Home"
+  }
+}

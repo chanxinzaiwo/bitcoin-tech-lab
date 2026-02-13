@@ -1,0 +1,187 @@
+{
+  "common": {
+    "loading": "加载中...",
+    "error": "发生错误",
+    "close": "关闭",
+    "save": "保存",
+    "cancel": "取消",
+    "confirm": "确认",
+    "back": "返回",
+    "next": "下一步",
+    "previous": "上一步",
+    "start": "开始",
+    "stop": "停止",
+    "reset": "重置",
+    "clear": "清除",
+    "copy": "复制",
+    "copied": "已复制！",
+    "learnMore": "了解更多",
+    "tryIt": "试一试",
+    "viewDetails": "查看详情"
+  },
+  "nav": {
+    "home": "首页",
+    "demos": "演示",
+    "about": "关于",
+    "shortcuts": "快捷键",
+    "settings": "设置",
+    "darkMode": "深色模式",
+    "lightMode": "浅色模式",
+    "language": "语言"
+  },
+  "home": {
+    "title": "比特币技术实验室",
+    "subtitle": "交互式探索比特币的密码学基础",
+    "getStarted": "开始探索",
+    "exploreTimeline": "探索时间线",
+    "whatYouWillLearn": "你将学习到",
+    "interactiveDemos": "交互式演示",
+    "selectDemo": "选择一个演示开始探索"
+  },
+  "demos": {
+    "categories": {
+      "fundamentals": "基础概念",
+      "cryptography": "密码学",
+      "bitcoin": "比特币",
+      "advanced": "高级主题"
+    },
+    "difficulty": {
+      "beginner": "入门",
+      "intermediate": "中级",
+      "advanced": "高级"
+    },
+    "hashFunctions": {
+      "title": "哈希函数",
+      "description": "探索 SHA-256 以及比特币如何使用密码学哈希函数"
+    },
+    "ellipticCurves": {
+      "title": "椭圆曲线",
+      "description": "可视化比特币密码学中使用的 secp256k1 曲线"
+    },
+    "digitalSignatures": {
+      "title": "数字签名",
+      "description": "了解 ECDSA 签名如何保护比特币交易安全"
+    },
+    "merkleTree": {
+      "title": "默克尔树",
+      "description": "理解比特币如何高效验证交易数据"
+    },
+    "mining": {
+      "title": "挖矿",
+      "description": "模拟工作量证明挖矿过程"
+    },
+    "wallets": {
+      "title": "钱包",
+      "description": "了解比特币钱包如何生成和管理密钥"
+    },
+    "transactions": {
+      "title": "交易",
+      "description": "理解比特币交易的结构"
+    },
+    "blockchain": {
+      "title": "区块链",
+      "description": "探索区块如何链接在一起"
+    }
+  },
+  "ecc": {
+    "title": "椭圆曲线密码学",
+    "curveEquation": "曲线方程",
+    "pointAddition": "点加法",
+    "scalarMultiplication": "标量乘法",
+    "privateKey": "私钥",
+    "publicKey": "公钥",
+    "generator": "生成点",
+    "order": "阶",
+    "infinity": "无穷远点",
+    "onCurve": "在曲线上",
+    "notOnCurve": "不在曲线上"
+  },
+  "hash": {
+    "title": "哈希函数",
+    "input": "输入",
+    "output": "输出（哈希值）",
+    "inputPlaceholder": "输入要哈希的文本...",
+    "sha256": "SHA-256",
+    "doubleSha256": "双重 SHA-256",
+    "ripemd160": "RIPEMD-160",
+    "avalancheEffect": "雪崩效应",
+    "hashProperties": "哈希特性"
+  },
+  "mining": {
+    "title": "比特币挖矿",
+    "nonce": "随机数",
+    "difficulty": "难度",
+    "target": "目标值",
+    "hashRate": "算力",
+    "blockFound": "找到区块！",
+    "searching": "搜索中...",
+    "startMining": "开始挖矿",
+    "stopMining": "停止挖矿",
+    "hashesPerSecond": "哈希/秒"
+  },
+  "signatures": {
+    "title": "数字签名",
+    "sign": "签名",
+    "verify": "验证",
+    "message": "消息",
+    "signature": "签名",
+    "valid": "有效签名",
+    "invalid": "无效签名",
+    "privateKeyRequired": "需要私钥才能签名"
+  },
+  "merkle": {
+    "title": "默克尔树",
+    "root": "默克尔根",
+    "leaf": "叶节点",
+    "branch": "分支",
+    "proof": "默克尔证明",
+    "addTransaction": "添加交易",
+    "verifyTransaction": "验证交易"
+  },
+  "wallet": {
+    "title": "比特币钱包",
+    "generateNew": "生成新钱包",
+    "importKey": "导入私钥",
+    "exportKey": "导出私钥",
+    "address": "地址",
+    "balance": "余额",
+    "privateKey": "私钥",
+    "publicKey": "公钥",
+    "mnemonic": "助记词",
+    "derivationPath": "派生路径"
+  },
+  "blockchain": {
+    "title": "区块链",
+    "block": "区块",
+    "blockHeight": "区块高度",
+    "previousHash": "上一个哈希",
+    "timestamp": "时间戳",
+    "transactions": "交易",
+    "addBlock": "添加区块",
+    "validateChain": "验证链",
+    "chainValid": "链有效",
+    "chainInvalid": "链无效"
+  },
+  "shortcuts": {
+    "title": "快捷键",
+    "navigation": "导航",
+    "actions": "操作",
+    "goHome": "返回首页",
+    "toggleTheme": "切换主题",
+    "showShortcuts": "显示快捷键",
+    "escape": "关闭 / 取消"
+  },
+  "footer": {
+    "builtWith": "使用",
+    "forEducation": "构建，用于教育目的",
+    "openSource": "开源",
+    "documentation": "文档",
+    "github": "GitHub"
+  },
+  "errors": {
+    "notFound": "页面未找到",
+    "generic": "出了点问题",
+    "tryAgain": "重试",
+    "goHome": "返回首页"
+  }
+}

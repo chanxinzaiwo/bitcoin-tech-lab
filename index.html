@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+
+    <!-- SEO Meta Tags -->
+    <title>Bitcoin Tech Lab - 互动式比特币技术学习平台</title>
+    <meta name="description" content="通过互动演示学习比特币核心技术：椭圆曲线密码学、工作量证明、闪电网络、Taproot等25+个技术模块" />
+    <meta name="keywords" content="比特币,Bitcoin,区块链,加密货币,ECC,闪电网络,Taproot,密码学" />
+    <meta name="author" content="Bitcoin Tech Lab" />
+
+    <!-- Theme & Mobile -->
+    <meta name="theme-color" content="#f97316" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="BTC Lab" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23f97316' rx='20' width='100' height='100'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-size='60' fill='white' font-weight='bold'>₿</text></svg>" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Bitcoin Tech Lab" />
+    <meta property="og:description" content="互动式比特币技术学习平台" />
+    <meta property="og:locale" content="zh_CN" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bitcoin Tech Lab" />
+    <meta name="twitter:description" content="互动式比特币技术学习平台" />
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://esm.sh" />
+    <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "path": "https://esm.sh/path@^0.12.7",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "react-markdown": "https://esm.sh/react-markdown@^10.1.0"
+  }
+}
+</script>
+    <link rel="stylesheet" href="/index.css">
+
+    <!-- Inline critical CSS for faster FCP -->
+    <style>
+      /* Critical above-the-fold styles */
+      body { background: #020617; color: #f1f5f9; }
+      #root { min-height: 100vh; }
+      .initial-loader {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #020617;
+        z-index: 9999;
+      }
+      .initial-loader .spinner {
+        width: 48px;
+        height: 48px;
+        border: 4px solid rgba(249, 115, 22, 0.2);
+        border-top-color: #f97316;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased">
+    <!-- Initial loader (removed by React) -->
+    <div id="initial-loader" class="initial-loader">
+      <div class="spinner"></div>
+    </div>
+
+    <div id="root"></div>
+
+    <script type="module" src="/index.tsx"></script>
+
+    <!-- Remove initial loader when app mounts -->
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const loader = document.getElementById('initial-loader');
+        if (loader) {
+          setTimeout(() => {
+            loader.style.opacity = '0';
+            loader.style.transition = 'opacity 0.3s';
+            setTimeout(() => loader.remove(), 300);
+          }, 100);
+        }
+      });
+    </script>
+  </body>
+</html>

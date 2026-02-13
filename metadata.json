@@ -1,0 +1,5 @@
+{
+  "name": "Bitcoin Tech Lab 3",
+  "description": "Interactive technical demonstrations of Bitcoin's underlying cryptography (ECC) and future security challenges (Quantum Computing).",
+  "requestFramePermissions": []
+}
