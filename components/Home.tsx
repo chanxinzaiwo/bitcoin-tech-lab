@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Zap, ArrowRight, Wallet, Network, Pickaxe, Hash, FileKey, Code, GitMerge, Cpu, Scaling, Workflow, TreeDeciduous, Skull, Flashlight, TrendingUp, Layers, History, EyeOff, Server, Users, GitBranch, BookOpen, Coins, FileText } from 'lucide-react';
+import { Shield, Zap, ArrowRight, Wallet, Network, Pickaxe, Hash, FileKey, Code, GitMerge, Cpu, Scaling, Workflow, TreeDeciduous, Skull, Flashlight, TrendingUp, Layers, History, EyeOff, Server, Users, GitBranch, BookOpen, Coins, FileText, Key, Smartphone, Snowflake, Split, Sigma, RefreshCw, Clock, KeyRound, Link2, Repeat, Box, Shuffle, Send, Gem, ArrowUp, Lock, Flame, Hexagon, Cat, Globe } from 'lucide-react';
 import { View } from '../config/navigation';
 import NetworkStats from './NetworkStats';
 import FAQ from './FAQ';
@@ -33,7 +33,9 @@ type ColorStyleKey =
   | 'teal'
   | 'yellow'
   | 'red'
-  | 'lime';
+  | 'lime'
+  | 'violet'
+  | 'green';
 
 interface DemoCardProps {
   title: string;
@@ -58,6 +60,8 @@ const colorStyles: Record<ColorStyleKey, string> = {
   yellow: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20 group-hover:border-yellow-500/50',
   red: 'bg-red-500/10 text-red-400 border-red-500/20 group-hover:border-red-500/50',
   lime: 'bg-lime-500/10 text-lime-400 border-lime-500/20 group-hover:border-lime-500/50',
+  violet: 'bg-violet-500/10 text-violet-400 border-violet-500/20 group-hover:border-violet-500/50',
+  green: 'bg-green-500/10 text-green-400 border-green-500/20 group-hover:border-green-500/50',
 };
 
 const difficultyConfig: Record<DifficultyLevel, { label: string; color: string }> = {
@@ -73,20 +77,20 @@ const Home: React.FC<HomeProps> = ({ onViewChange }) => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] bg-orange-500/10 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-        
+      <div className="max-w-5xl mx-auto px-3 sm:px-6 lg:px-8 py-8 sm:py-16 relative z-10">
+
         {/* Header */}
-        <div className="text-center space-y-6 mb-24 animate-in fade-in slide-in-from-bottom-4 duration-700">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-wider shadow-[0_0_15px_rgba(249,115,22,0.2)]">
+        <div className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-24 animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-[0_0_15px_rgba(249,115,22,0.2)]">
             Bitcoin Technical Lab
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight text-white">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
             解构比特币：<br/>
             <span className="bg-gradient-to-r from-orange-400 to-amber-200 bg-clip-text text-transparent">
               从原理到现代协议的旅程
             </span>
           </h1>
-          <p className="max-w-2xl mx-auto text-base sm:text-lg text-slate-400 leading-relaxed px-2 sm:px-0">
+          <p className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-slate-400 leading-relaxed px-2 sm:px-0">
             比特币不仅仅是一种货币，它是一座由数学构建的精密大厦。
             <br className="hidden md:block"/>
             跟随下方的逻辑链路，亲手交互每一个核心组件。
@@ -273,171 +277,105 @@ const Home: React.FC<HomeProps> = ({ onViewChange }) => {
         </div>
 
         {/* Supplementary Section */}
-        <div className="mt-20 pt-20 border-t border-slate-800/50">
-            <h2 className="text-3xl font-bold text-center text-white mb-16 flex items-center justify-center gap-3">
-                <Zap className="w-8 h-8 text-yellow-400 fill-yellow-400" />
+        <div className="mt-12 sm:mt-20 pt-12 sm:pt-20 border-t border-slate-800/50">
+            <h2 className="text-2xl sm:text-3xl font-bold text-center text-white mb-8 sm:mb-16 flex items-center justify-center gap-2 sm:gap-3">
+                <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400 fill-yellow-400" />
                 深入学习
             </h2>
 
-            {/* New Modules Grid */}
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
-                <div
-                    onClick={() => onViewChange('fullnode')}
-                    className="group bg-slate-900 border border-slate-800 rounded-2xl p-6 cursor-pointer hover:border-cyan-500/50 transition-all duration-300"
-                >
-                    <div className="w-12 h-12 bg-cyan-900/30 text-cyan-400 rounded-xl flex items-center justify-center mb-4 border border-cyan-500/20">
-                        <Server className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-2">运行全节点</h3>
-                    <p className="text-slate-400 text-sm mb-4">
-                        独立验证每笔交易，成为比特币网络的一部分
-                    </p>
-                    <span className="text-cyan-400 font-bold text-sm flex items-center gap-2">
-                        了解更多 <ArrowRight className="w-4 h-4" />
-                    </span>
-                </div>
+            {/* All Modules Grid - Organized by Category */}
 
-                <div
-                    onClick={() => onViewChange('privacy')}
-                    className="group bg-slate-900 border border-slate-800 rounded-2xl p-6 cursor-pointer hover:border-violet-500/50 transition-all duration-300"
-                >
-                    <div className="w-12 h-12 bg-violet-900/30 text-violet-400 rounded-xl flex items-center justify-center mb-4 border border-violet-500/20">
-                        <EyeOff className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-2">隐私技术</h3>
-                    <p className="text-slate-400 text-sm mb-4">
-                        CoinJoin、PayJoin、Silent Payments 原理演示
-                    </p>
-                    <span className="text-violet-400 font-bold text-sm flex items-center gap-2">
-                        了解更多 <ArrowRight className="w-4 h-4" />
-                    </span>
-                </div>
-
-                <div
-                    onClick={() => onViewChange('history')}
-                    className="group bg-slate-900 border border-slate-800 rounded-2xl p-6 cursor-pointer hover:border-indigo-500/50 transition-all duration-300"
-                >
-                    <div className="w-12 h-12 bg-indigo-900/30 text-indigo-400 rounded-xl flex items-center justify-center mb-4 border border-indigo-500/20">
-                        <History className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-2">比特币历史</h3>
-                    <p className="text-slate-400 text-sm mb-4">
-                        从创世区块到今天的重大事件时间线
-                    </p>
-                    <span className="text-indigo-400 font-bold text-sm flex items-center gap-2">
-                        了解更多 <ArrowRight className="w-4 h-4" />
-                    </span>
-                </div>
+            {/* 核心原理 */}
+            <h3 className="text-lg sm:text-xl font-bold text-slate-300 mb-4 sm:mb-6 flex items-center gap-2">
+                <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
+                核心原理
+            </h3>
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2 sm:gap-3 mb-8 sm:mb-12">
+                <ModuleCard view="ecc" label="ECC 加密" icon={Shield} color="orange" onClick={onViewChange} />
+                <ModuleCard view="address" label="地址生成" icon={Hash} color="emerald" onClick={onViewChange} />
+                <ModuleCard view="hdwallet" label="HD 钱包" icon={TreeDeciduous} color="teal" onClick={onViewChange} />
+                <ModuleCard view="bip32" label="BIP32 派生" icon={Key} color="blue" onClick={onViewChange} />
+                <ModuleCard view="bip39" label="BIP39 助记词" icon={BookOpen} color="emerald" onClick={onViewChange} />
+                <ModuleCard view="utxo" label="UTXO 模型" icon={Wallet} color="blue" onClick={onViewChange} />
+                <ModuleCard view="script" label="脚本引擎" icon={Code} color="pink" onClick={onViewChange} />
+                <ModuleCard view="miniscript" label="Miniscript" icon={FileText} color="cyan" onClick={onViewChange} />
+                <ModuleCard view="merkle" label="默克尔树" icon={GitBranch} color="purple" onClick={onViewChange} />
+                <ModuleCard view="transaction" label="交易构建" icon={Send} color="indigo" onClick={onViewChange} />
+                <ModuleCard view="coinselection" label="币种选择" icon={Coins} color="amber" onClick={onViewChange} />
+                <ModuleCard view="mempool" label="内存池" icon={Layers} color="purple" onClick={onViewChange} />
             </div>
 
-            {/* New Feature Modules */}
-            <h3 className="text-xl font-bold text-center text-slate-400 mb-8">高级技术模块</h3>
-            <div className="grid md:grid-cols-5 gap-4 max-w-5xl mx-auto mb-12">
-                <div
-                    onClick={() => onViewChange('musig2')}
-                    className="group bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-violet-500/50 transition-all duration-300"
-                >
-                    <div className="w-10 h-10 bg-violet-900/30 text-violet-400 rounded-lg flex items-center justify-center mb-3 border border-violet-500/20">
-                        <Users className="w-5 h-5" />
-                    </div>
-                    <h4 className="font-bold text-white mb-1 text-sm">MuSig2</h4>
-                    <p className="text-slate-500 text-xs">多方聚合签名</p>
-                </div>
-
-                <div
-                    onClick={() => onViewChange('miniscript')}
-                    className="group bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-cyan-500/50 transition-all duration-300"
-                >
-                    <div className="w-10 h-10 bg-cyan-900/30 text-cyan-400 rounded-lg flex items-center justify-center mb-3 border border-cyan-500/20">
-                        <FileText className="w-5 h-5" />
-                    </div>
-                    <h4 className="font-bold text-white mb-1 text-sm">Miniscript</h4>
-                    <p className="text-slate-500 text-xs">策略脚本语言</p>
-                </div>
-
-                <div
-                    onClick={() => onViewChange('sidechains')}
-                    className="group bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-indigo-500/50 transition-all duration-300"
-                >
-                    <div className="w-10 h-10 bg-indigo-900/30 text-indigo-400 rounded-lg flex items-center justify-center mb-3 border border-indigo-500/20">
-                        <GitBranch className="w-5 h-5" />
-                    </div>
-                    <h4 className="font-bold text-white mb-1 text-sm">侧链</h4>
-                    <p className="text-slate-500 text-xs">Liquid & RSK</p>
-                </div>
-
-                <div
-                    onClick={() => onViewChange('bip39')}
-                    className="group bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-emerald-500/50 transition-all duration-300"
-                >
-                    <div className="w-10 h-10 bg-emerald-900/30 text-emerald-400 rounded-lg flex items-center justify-center mb-3 border border-emerald-500/20">
-                        <BookOpen className="w-5 h-5" />
-                    </div>
-                    <h4 className="font-bold text-white mb-1 text-sm">BIP39</h4>
-                    <p className="text-slate-500 text-xs">助记词详解</p>
-                </div>
-
-                <div
-                    onClick={() => onViewChange('coinselection')}
-                    className="group bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-amber-500/50 transition-all duration-300"
-                >
-                    <div className="w-10 h-10 bg-amber-900/30 text-amber-400 rounded-lg flex items-center justify-center mb-3 border border-amber-500/20">
-                        <Coins className="w-5 h-5" />
-                    </div>
-                    <h4 className="font-bold text-white mb-1 text-sm">币种选择</h4>
-                    <p className="text-slate-500 text-xs">UTXO 优化算法</p>
-                </div>
+            {/* 网络共识 */}
+            <h3 className="text-lg sm:text-xl font-bold text-slate-300 mb-4 sm:mb-6 flex items-center gap-2">
+                <Network className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
+                网络共识
+            </h3>
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2 sm:gap-3 mb-8 sm:mb-12">
+                <ModuleCard view="p2p" label="P2P 网络" icon={Network} color="indigo" onClick={onViewChange} />
+                <ModuleCard view="blockstructure" label="区块结构" icon={Box} color="blue" onClick={onViewChange} />
+                <ModuleCard view="pow" label="PoW 挖矿" icon={Pickaxe} color="amber" onClick={onViewChange} />
+                <ModuleCard view="mining" label="挖矿经济学" icon={TrendingUp} color="orange" onClick={onViewChange} />
+                <ModuleCard view="consensus" label="共识机制" icon={GitMerge} color="rose" onClick={onViewChange} />
+                <ModuleCard view="fork" label="软硬分叉" icon={Split} color="purple" onClick={onViewChange} />
             </div>
 
-            {/* Original Challenge Cards */}
-            <h3 className="text-xl font-bold text-center text-slate-400 mb-8">前沿与挑战</h3>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div
-                    onClick={() => onViewChange('quantum')}
-                    className="group relative overflow-hidden bg-slate-900 border border-slate-800 rounded-3xl p-8 cursor-pointer hover:border-cyan-500/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)]"
-                >
-                    <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity text-cyan-500 pointer-events-none">
-                        <Cpu className="w-40 h-40" />
-                    </div>
-                    <div className="relative z-10">
-                        <div className="w-14 h-14 bg-cyan-900/30 text-cyan-400 rounded-2xl flex items-center justify-center mb-6 border border-cyan-500/20 group-hover:scale-110 transition-transform duration-300">
-                            <Cpu className="w-7 h-7" />
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-3">量子计算危机</h3>
-                        <p className="text-slate-400 mb-6 leading-relaxed">
-                            Shor 算法如何威胁现有的 ECC 加密体系？比特币抵御量子攻击的最后一道防线是什么？
-                        </p>
-                        <span className="text-cyan-400 font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
-                            进入模拟 <ArrowRight className="w-5 h-5" />
-                        </span>
-                    </div>
-                </div>
+            {/* 扩容与升级 */}
+            <h3 className="text-lg sm:text-xl font-bold text-slate-300 mb-4 sm:mb-6 flex items-center gap-2">
+                <Scaling className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />
+                扩容与升级
+            </h3>
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2 sm:gap-3 mb-8 sm:mb-12">
+                <ModuleCard view="segwit" label="隔离见证" icon={Scaling} color="cyan" onClick={onViewChange} />
+                <ModuleCard view="taproot" label="Taproot" icon={Workflow} color="purple" onClick={onViewChange} />
+                <ModuleCard view="schnorr" label="Schnorr 签名" icon={Sigma} color="pink" onClick={onViewChange} />
+                <ModuleCard view="musig2" label="MuSig2 聚合" icon={Users} color="violet" onClick={onViewChange} />
+                <ModuleCard view="lightning" label="闪电网络" icon={Flashlight} color="yellow" onClick={onViewChange} />
+                <ModuleCard view="sidechains" label="侧链" icon={GitBranch} color="indigo" onClick={onViewChange} />
+                <ModuleCard view="timelock" label="时间锁" icon={Clock} color="teal" onClick={onViewChange} />
+                <ModuleCard view="psbt" label="PSBT 签名" icon={FileText} color="blue" onClick={onViewChange} />
+                <ModuleCard view="atomicswap" label="原子交换" icon={Repeat} color="emerald" onClick={onViewChange} />
+                <ModuleCard view="rbf" label="RBF 替换" icon={RefreshCw} color="lime" onClick={onViewChange} />
+                <ModuleCard view="cpfp" label="CPFP 子付父" icon={ArrowUp} color="green" onClick={onViewChange} />
+            </div>
 
-                <div
-                    onClick={() => onViewChange('lamport')}
-                    className="group relative overflow-hidden bg-slate-900 border border-slate-800 rounded-3xl p-8 cursor-pointer hover:border-green-500/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,197,94,0.15)]"
-                >
-                    <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity text-green-500 pointer-events-none">
-                        <Hash className="w-40 h-40" />
-                    </div>
-                    <div className="relative z-10">
-                        <div className="w-14 h-14 bg-green-900/30 text-green-400 rounded-2xl flex items-center justify-center mb-6 border border-green-500/20 group-hover:scale-110 transition-transform duration-300">
-                            <Hash className="w-7 h-7" />
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-3">Lamport 签名</h3>
-                        <p className="text-slate-400 mb-6 leading-relaxed">
-                            一种基于哈希函数的后量子签名方案。虽然体积大、只能使用一次，但它极难被量子计算机攻破。
-                        </p>
-                        <span className="text-green-400 font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
-                            查看原理 <ArrowRight className="w-5 h-5" />
-                        </span>
-                    </div>
-                </div>
+            {/* 安全与隐私 */}
+            <h3 className="text-lg sm:text-xl font-bold text-slate-300 mb-4 sm:mb-6 flex items-center gap-2">
+                <EyeOff className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400" />
+                安全与隐私
+            </h3>
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2 sm:gap-3 mb-8 sm:mb-12">
+                <ModuleCard view="fullnode" label="全节点" icon={Server} color="cyan" onClick={onViewChange} />
+                <ModuleCard view="spv" label="SPV 轻节点" icon={Smartphone} color="blue" onClick={onViewChange} />
+                <ModuleCard view="cold" label="冷钱包" icon={Snowflake} color="cyan" onClick={onViewChange} />
+                <ModuleCard view="multisig" label="多签钱包" icon={Users} color="purple" onClick={onViewChange} />
+                <ModuleCard view="threshold" label="门限签名" icon={KeyRound} color="indigo" onClick={onViewChange} />
+                <ModuleCard view="adaptor" label="适配器签名" icon={Link2} color="pink" onClick={onViewChange} />
+                <ModuleCard view="vault" label="Vault 保险库" icon={Lock} color="teal" onClick={onViewChange} />
+                <ModuleCard view="coinjoin" label="CoinJoin 混币" icon={Shuffle} color="violet" onClick={onViewChange} />
+                <ModuleCard view="privacy" label="隐私技术" icon={EyeOff} color="purple" onClick={onViewChange} />
+                <ModuleCard view="attack51" label="51% 攻击" icon={Skull} color="red" onClick={onViewChange} />
+            </div>
+
+            {/* 前沿与历史 */}
+            <h3 className="text-lg sm:text-xl font-bold text-slate-300 mb-4 sm:mb-6 flex items-center gap-2">
+                <History className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-400" />
+                前沿与历史
+            </h3>
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2 sm:gap-3 mb-8 sm:mb-12">
+                <ModuleCard view="ordinals" label="Ordinals 铭文" icon={Gem} color="amber" onClick={onViewChange} />
+                <ModuleCard view="runes" label="Runes 符文" icon={Flame} color="orange" onClick={onViewChange} />
+                <ModuleCard view="arc20" label="ARC20 代币" icon={Hexagon} color="yellow" onClick={onViewChange} />
+                <ModuleCard view="cat20" label="CAT20 代币" icon={Cat} color="lime" onClick={onViewChange} />
+                <ModuleCard view="ecosystem" label="生态全景" icon={Globe} color="violet" onClick={onViewChange} />
+                <ModuleCard view="opcat" label="OP_CAT" icon={Link2} color="orange" onClick={onViewChange} />
+                <ModuleCard view="history" label="比特币历史" icon={History} color="indigo" onClick={onViewChange} />
+                <ModuleCard view="quantum" label="量子计算" icon={Cpu} color="cyan" onClick={onViewChange} />
+                <ModuleCard view="lamport" label="Lamport 签名" icon={FileKey} color="emerald" onClick={onViewChange} />
             </div>
         </div>
 
         {/* FAQ & Timeline Section */}
-        <div className="mt-20 grid lg:grid-cols-2 gap-6">
+        <div className="mt-12 sm:mt-20 grid lg:grid-cols-2 gap-4 sm:gap-6">
             <FAQ isDarkMode={true} />
             <BitcoinTimeline isDarkMode={true} />
         </div>
@@ -504,6 +442,48 @@ const DemoCard: React.FC<DemoCardProps> = ({ title, desc, icon: Icon, color, onC
             </div>
         </div>
     );
+};
+
+// --- Module Card Component for All Modules Grid ---
+interface ModuleCardProps {
+  view: View;
+  label: string;
+  icon: React.ComponentType<{ className?: string }>;
+  color: ColorStyleKey;
+  onClick: (view: View) => void;
+}
+
+const ModuleCard: React.FC<ModuleCardProps> = ({ view, label, icon: Icon, color, onClick }) => {
+  const colorClasses: Record<ColorStyleKey, { bg: string; text: string; border: string; hoverBorder: string }> = {
+    orange: { bg: 'bg-orange-900/30', text: 'text-orange-400', border: 'border-orange-500/20', hoverBorder: 'hover:border-orange-500/50' },
+    emerald: { bg: 'bg-emerald-900/30', text: 'text-emerald-400', border: 'border-emerald-500/20', hoverBorder: 'hover:border-emerald-500/50' },
+    blue: { bg: 'bg-blue-900/30', text: 'text-blue-400', border: 'border-blue-500/20', hoverBorder: 'hover:border-blue-500/50' },
+    pink: { bg: 'bg-pink-900/30', text: 'text-pink-400', border: 'border-pink-500/20', hoverBorder: 'hover:border-pink-500/50' },
+    indigo: { bg: 'bg-indigo-900/30', text: 'text-indigo-400', border: 'border-indigo-500/20', hoverBorder: 'hover:border-indigo-500/50' },
+    amber: { bg: 'bg-amber-900/30', text: 'text-amber-400', border: 'border-amber-500/20', hoverBorder: 'hover:border-amber-500/50' },
+    purple: { bg: 'bg-purple-900/30', text: 'text-purple-400', border: 'border-purple-500/20', hoverBorder: 'hover:border-purple-500/50' },
+    rose: { bg: 'bg-rose-900/30', text: 'text-rose-400', border: 'border-rose-500/20', hoverBorder: 'hover:border-rose-500/50' },
+    cyan: { bg: 'bg-cyan-900/30', text: 'text-cyan-400', border: 'border-cyan-500/20', hoverBorder: 'hover:border-cyan-500/50' },
+    teal: { bg: 'bg-teal-900/30', text: 'text-teal-400', border: 'border-teal-500/20', hoverBorder: 'hover:border-teal-500/50' },
+    yellow: { bg: 'bg-yellow-900/30', text: 'text-yellow-400', border: 'border-yellow-500/20', hoverBorder: 'hover:border-yellow-500/50' },
+    red: { bg: 'bg-red-900/30', text: 'text-red-400', border: 'border-red-500/20', hoverBorder: 'hover:border-red-500/50' },
+    lime: { bg: 'bg-lime-900/30', text: 'text-lime-400', border: 'border-lime-500/20', hoverBorder: 'hover:border-lime-500/50' },
+    violet: { bg: 'bg-violet-900/30', text: 'text-violet-400', border: 'border-violet-500/20', hoverBorder: 'hover:border-violet-500/50' },
+    green: { bg: 'bg-green-900/30', text: 'text-green-400', border: 'border-green-500/20', hoverBorder: 'hover:border-green-500/50' },
+  };
+  const c = colorClasses[color];
+
+  return (
+    <div
+      onClick={() => onClick(view)}
+      className={`group bg-slate-900 border border-slate-800 rounded-xl p-2.5 sm:p-3 cursor-pointer ${c.hoverBorder} transition-all duration-300 hover:bg-slate-800/50 active:scale-[0.98] min-h-[72px] sm:min-h-0`}
+    >
+      <div className={`w-8 h-8 sm:w-9 sm:h-9 ${c.bg} ${c.text} rounded-lg flex items-center justify-center mb-1.5 sm:mb-2 border ${c.border}`}>
+        <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+      </div>
+      <h4 className="font-bold text-white text-[10px] sm:text-xs leading-tight line-clamp-2">{label}</h4>
+    </div>
+  );
 };
 
 export default Home;
